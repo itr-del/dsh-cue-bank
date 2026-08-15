@@ -1,0 +1,47 @@
+{
+  "name": "@local/dsh-cue-bank",
+  "version": "0.1.0",
+  "description": "Cross-session memory cue bank for DeepSeek Harness: builds a persistent event-cue library (keywords, user language idiosyncrasies) and re-activates remembered event details on topic switches, mirroring human episodic recall.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "dependencies": {},
+  "dsh": {
+    "plugin": {
+      "id": "cue-bank",
+      "name": "cue-bank",
+      "defaultConfig": {
+        "storageRoot": "",
+        "matchMode": "auto",
+        "embedding": {
+          "provider": "openai-compatible",
+          "baseURL": "https://api.siliconflow.cn/v1",
+          "apiKeyEnv": "SILICONFLOW_API_KEY",
+          "model": "BAAI/bge-m3",
+          "dimensions": 1024,
+          "timeoutMs": 5000
+        },
+        "topic": {
+          "switchDetection": true,
+          "switchThreshold": 0.25,
+          "scanEveryTurn": false
+        },
+        "inject": {
+          "enabled": true,
+          "maxCues": 3,
+          "maxDetailChars": 400
+        },
+        "extract": {
+          "enabled": true,
+          "maxKeywordsPerTurn": 12,
+          "keywordMinLen": 2,
+          "userIdiomWindowTurns": 10,
+          "maxIdiomHints": 5
+        },
+        "dbg": false
+      }
+    }
+  }
+}

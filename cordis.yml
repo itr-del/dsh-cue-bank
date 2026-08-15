@@ -1,0 +1,10 @@
+# cue-bank 插件的 cordis 元数据
+# 通过 dsh profile 的 cordis.patch.yml 挂载
+- id: cue-bank
+  name: '@local/dsh-cue-bank'
+  config:
+    # 全局存储根：留空时用 $DSH_HOME/storages/cue-bank
+    storageRoot: ''
+    # auto = 有 embedding API key 用向量，否则关键词穷举；keyword | vector 强制
+    matchMode: 'auto'
+    dbg: false
