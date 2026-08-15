@@ -1,0 +1,15 @@
+# Node
+node_modules/
+*.log
+
+# Test artifacts
+test-data/
+/tmp/
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Local runtime state (never commit user memory data)
+storages/
+*.tmp-*
