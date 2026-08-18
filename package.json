@@ -49,5 +49,23 @@
         "dbg": false
       }
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itr-del/dsh-cue-bank.git"
+  },
+  "homepage": "https://github.com/itr-del/dsh-cue-bank",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "memory",
+    "cue-bank",
+    "cross-session",
+    "context"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/keywords.test.js && node test/store.test.js && node test/embedding.test.js && node test/integration.test.js"
   }
 }
