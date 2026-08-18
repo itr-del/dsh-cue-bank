@@ -68,13 +68,20 @@
 
 ## 安装
 
-### 1. 插件包（已在 `/home/ubuntu/dsh-cue-bank`）
+### 1. 一键安装（推荐）
 
-### 2. 挂载到 profile
+```sh
+dsh plugin --profile web add github:itr-del/dsh-cue-bank
+```
+
+安装器通过 package.json 的 `dsh.bundle` manifest 解析插件（`cordis.patch.yml`），挂载到指定 profile 后重启 dsh 即生效。
+
+### 2. 手动挂载到 profile（可选）
+
 在 profile 的 `package.json` 加依赖：
 ```json
 "dependencies": {
-  "@local/dsh-cue-bank": "file:/home/ubuntu/dsh-cue-bank"
+  "@local/dsh-cue-bank": "file:/path/to/dsh-cue-bank"
 }
 ```
 在 profile 的 `cordis.patch.yml` 插入：
@@ -107,6 +114,8 @@
 cd ~/.dsh/profiles/web && pnpm install
 # 重启 dsh web 后生效（插件在启动时加载）
 ```
+
+> 🔒 **隐私提示**：向量模式（`matchMode: auto` 且设置了 `SILICONFLOW_API_KEY`）会把对话文本编码后发送到 **https://api.siliconflow.cn/v1**（默认第三方 OpenAI 兼容端点）生成嵌入向量，用于库内语义匹配。写入时的库向量也会经该端点预计算。若需完全本地运行，请勿设置该 API key（自动降级为纯关键词本地匹配），或把 `embedding.baseURL` 改为自托管端点。
 
 ## 完整配置项
 
