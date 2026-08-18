@@ -9,6 +9,12 @@
   },
   "dependencies": {},
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    },
     "plugin": {
       "id": "cue-bank",
       "name": "cue-bank",
