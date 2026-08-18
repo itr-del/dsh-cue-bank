@@ -207,7 +207,11 @@ cd ~/.dsh/profiles/web && pnpm install
 ## 测试
 
 ```sh
-cd dsh-cue-bank && node test/integration.test.js   # 13/13 通过
+cd dsh-cue-bank
+node test/keywords.test.js      # 22/22 通过（提取/合并/重合度/惯用词）
+node test/store.test.js         # 16/16 通过（持久化/合并/容错）
+node test/embedding.test.js     # 18/18 通过（余弦/可用性/维度，不发网络请求）
+node test/integration.test.js   # 13/13 通过（全链路，真实 cordis Context）
 ```
 
 覆盖：写入建库、话题切换唤醒、同话题抑制、无关话题抑制、惯用词提取、惯用词参与唤醒（第二类触点闭环）。
