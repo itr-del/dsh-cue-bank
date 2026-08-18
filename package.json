@@ -66,6 +66,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "node test/keywords.test.js && node test/store.test.js && node test/embedding.test.js && node test/integration.test.js"
+    "test": "node test/keywords.test.js && node test/store.test.js && node test/embedding.test.js",
+    "test:integration": "node test/integration.test.js"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
   }
 }
