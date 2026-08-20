@@ -76,19 +76,21 @@ dsh plugin --profile web add github:itr-del/dsh-cue-bank
 
 安装器通过 package.json 的 `dsh.bundle` manifest 解析插件（`cordis.patch.yml`），挂载到指定 profile 后重启 dsh 即生效。
 
+> 也可以从 npm 安装：`dsh plugin --profile web add dsh-cue-bank`（已发布到 npm，见 [npmjs.com/package/dsh-cue-bank](https://www.npmjs.com/package/dsh-cue-bank)）。
+
 ### 2. 手动挂载到 profile（可选）
 
 在 profile 的 `package.json` 加依赖：
 ```json
 "dependencies": {
-  "@local/dsh-cue-bank": "file:/path/to/dsh-cue-bank"
+  "dsh-cue-bank": "^0.1.0"
 }
 ```
 在 profile 的 `cordis.patch.yml` 插入：
 ```yaml
 - insert:
     - id: cue-bank
-      name: '@local/dsh-cue-bank'
+      name: 'dsh-cue-bank'
       config:
         storageRoot: ''
         matchMode: 'auto'
