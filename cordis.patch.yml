@@ -1,7 +1,7 @@
 # cue-bank 插件的 cordis 元数据
 # 通过 dsh profile 的 cordis.patch.yml 挂载
 - id: cue-bank
-  name: '@local/dsh-cue-bank'
+  name: 'dsh-cue-bank'
   config:
     # 全局存储根：留空时用 $DSH_HOME/storages/cue-bank
     storageRoot: ''

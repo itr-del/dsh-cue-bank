@@ -1,5 +1,5 @@
 {
-  "name": "@local/dsh-cue-bank",
+  "name": "dsh-cue-bank",
   "version": "0.1.0",
   "description": "Cross-session memory cue bank for DeepSeek Harness: builds a persistent event-cue library (keywords, user language idiosyncrasies) and re-activates remembered event details on topic switches, mirroring human episodic recall.",
   "type": "module",
@@ -7,6 +7,13 @@
   "exports": {
     ".": "./src/index.js"
   },
+  "files": [
+    "src/",
+    "test/",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {},
   "dsh": {
     "bundle": {
